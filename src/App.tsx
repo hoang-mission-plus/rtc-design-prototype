@@ -9,9 +9,13 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <NavbarComponent />
-        <Route exact path="/prices" component={() => <Price />} />
-        <Route exact path="/orders" component={() => <Order />} />
+        <div className="header">
+          <NavbarComponent />
+        </div>
+        <div className="content">
+          <Route exact path="/prices" component={() => <Price />} />
+          <Route exact path="/orders" component={() => <Order />} />
+        </div>
       </div>
     </Router>
   );

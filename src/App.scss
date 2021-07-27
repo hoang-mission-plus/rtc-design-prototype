@@ -1,1 +1,13 @@
 @import "rtc-design-prototype/src/assets/scss/core.scss";
+.App {
+  .header {
+    .bp3-navbar {
+      &.dark_version {
+        border: none;
+      }
+    }
+  }
+  .content {
+    margin: 0 100px;
+  }
+}
