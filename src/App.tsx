@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "./App.scss";
 import NavbarComponent from "./component/Navbar";
 import Price from "./component/Price";
-import Order from "./component/Order";
+import Order from "./component/order/Order";
 function App() {
   return (
     <Router>

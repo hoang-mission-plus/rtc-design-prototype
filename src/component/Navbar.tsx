@@ -5,6 +5,9 @@ import Logo from "../image/logo.svg";
 import { Button, Navbar } from "rtc-design-prototype";
 import { Link } from "react-router-dom";
 const NavbarComponent = () => {
+  const handleNavbarTabChange = (navbarTabId: any) => {
+    console.log(navbarTabId);
+  };
   return (
     <Fragment>
       <Navbar className="dark_version">
@@ -15,7 +18,7 @@ const NavbarComponent = () => {
               <SVG src={Logo} />
             </Link>
           </Navbar.Heading>
-          <ul>
+          <ul onChange={handleNavbarTabChange}>
             <li>
               <Link to="/prices">Prices</Link>
             </li>
