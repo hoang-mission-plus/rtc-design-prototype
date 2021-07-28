@@ -11,3 +11,34 @@
     margin: 0 100px;
   }
 }
+.mt-20 {
+  margin-top: 20px;
+}
+.btn-ml-15 {
+  margin-left: 15px;
+}
+.btn-mb-5 {
+  margin-bottom: 5px;
+}
+.btn-mb {
+  margin-bottom: 25px;
+}
+.btn-bd {
+  border: 1px solid #002c5f;
+}
+.icon-ml {
+  svg {
+    width: 35px;
+    height: 35px;
+  }
+  margin-left: 35px;
+}
+.bp3-dialog .bp3-dialog-body .bp3-input-group {
+  margin: 0;
+}
+.bp3-control-group.bp3-numeric-input .bp3-input-group .bp3-input {
+  border: none;
+}
+.bp3-icon.bp3-intent-primary {
+  color: #002c5f;
+}
