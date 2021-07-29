@@ -24,7 +24,7 @@ const SelectComponent = (props: any) => {
         minimal: true,
       }}
       inputValueRenderer={renderInputValue}
-      onItemSelect={props.onItemSelect}
+      onItemSelect={props.onItemSelectItem}
     />
   );
 };

@@ -4,6 +4,7 @@ import {
   Classes,
   FormGroup,
   Icon,
+  ISelect,
   Tab,
   Tabs,
 } from "rtc-design-prototype";
@@ -27,7 +28,7 @@ export interface IpropsOrder {
   charterer: string;
   description: string;
 }
-const Price = (props: any) => {
+const Order = () => {
   const valueContacts = [
     { value: 1, title: "Cape5TC" },
     { value: 2, title: "C5" },
@@ -40,14 +41,11 @@ const Price = (props: any) => {
   const [dataTable, setDataTable] = useState([]);
   const [title, setTitle] = useState("");
   useEffect(() => {
-    try {
-      const dataT: any = [];
-      data.filter((x: any) => dataT.push(x));
-      setDataTable(dataT);
-    } catch (e) {
-      console.error(e);
-    }
+    const dataT: any = [];
+    data.filter((x: any) => dataT.push(x));
+    setDataTable(dataT);
   }, []);
+  const handleChange = (e: ISelect) => setTitle(e.title);
 
   const handleClickSearch = () => {
     if (title) {
@@ -58,12 +56,7 @@ const Price = (props: any) => {
     }
   };
 
-  const handleChange = (e: any) => {
-    console.log(e);
-    if (e) {
-      setTitle(e.title);
-    }
-  };
+ 
   const OrderPanel: React.FunctionComponent = () => (
     <div>
       <div className="order_content">
@@ -80,7 +73,7 @@ const Price = (props: any) => {
             <FormGroup>
               <SelectComponent
                 items={valueContacts}
-                onItemSelect={handleChange}
+                onItemSelectItem={handleChange}
               />
             </FormGroup>
           </li>
@@ -116,12 +109,12 @@ const Price = (props: any) => {
   );
   return (
     <div>
-      <Tabs id="TabsExample" key={"vertical"}>
-        <Tab id="1" title="All orders" panel={<OrderPanel />} />
-        <Tab id="2" title="All trades" panel={<TradesPanel />} />
+      <Tabs id="TabsExample" key={"horizontal"} animate={false}>
+        <Tab id='rx' title="All orders" panel={<OrderPanel />} />
+        <Tab id='ng' title="All trades" panel={<TradesPanel />} />
       </Tabs>
     </div>
   );
 };
 
-export default Price;
+export default Order;
