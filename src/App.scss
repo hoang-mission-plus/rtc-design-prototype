@@ -23,9 +23,6 @@
 .btn-mb {
   margin-bottom: 25px;
 }
-.btn-bd {
-  border: 1px solid #002c5f;
-}
 .icon-ml {
   svg {
     width: 35px;
@@ -41,4 +38,12 @@
 }
 .bp3-icon.bp3-intent-primary {
   color: #002c5f;
+}
+.bp3-form-group .bp3-label {
+  font-size: 12px;
+  color: #706f6f;
+}
+.bp3-dialog .bp3-dialog-header .bp3-heading {
+  color: black;
+  font-size: 30px;
 }

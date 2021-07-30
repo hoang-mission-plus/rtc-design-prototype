@@ -17,6 +17,7 @@ import {
   RadioGroup,
   Select,
   Table,
+  Card,
 } from "rtc-design-prototype";
 import { dataQuizz } from "./data";
 
@@ -29,7 +30,7 @@ const AllOrdersComponent = (args: any, propsUnit: any) => {
   const { valueUnit, ...res } = propsUnit;
   const [inputValue, setValueUnit] = useState(value);
   const handleChange = () => setValueUnit(inputValue);
-  const unit = <span>dpm</span>;
+  const unit = <span style={{ color: "#706f6f" }}>dpm</span>;
 
   const [valueNumeric, setValueNumeric] = useState(args.value);
   const handleValueChange = (_v: number, value: string) =>
@@ -163,9 +164,10 @@ const AllOrdersComponent = (args: any, propsUnit: any) => {
       key: "x",
       render: () => (
         <Fragment>
+          <Icon icon="eye-open" />
+          <Icon icon="duplicate" />
           <Icon icon="add" />
-          <Icon icon="add" />
-          <Icon icon="add" />
+          <Icon icon="cross" />
         </Fragment>
       ),
     },
@@ -191,7 +193,9 @@ const AllOrdersComponent = (args: any, propsUnit: any) => {
                   title="New order"
                 >
                   <div className={Classes.DIALOG_BODY}>
-                    <h6>Contract</h6>
+                    <p style={{ color: "#706F6F", fontSize: "12px" }}>
+                      Contract
+                    </p>
                     <div
                       className="answer-section"
                       style={{ display: "flex", flexWrap: "wrap" }}
@@ -211,7 +215,11 @@ const AllOrdersComponent = (args: any, propsUnit: any) => {
                             >
                               <span
                                 className="title_answer"
-                                style={{ marginRight: "24px" }}
+                                style={{
+                                  marginRight: "24px",
+                                  color: "#3389DB",
+                                  fontSize: "12px",
+                                }}
                               >
                                 {answerOption.title}
                               </span>
@@ -236,7 +244,7 @@ const AllOrdersComponent = (args: any, propsUnit: any) => {
                       </FormGroup>
                       <FormGroup
                         style={{ width: "200px", marginLeft: "30px" }}
-                        label={"Tenor"}
+                        label={"Book"}
                       >
                         <Select
                           key="select"
@@ -249,7 +257,7 @@ const AllOrdersComponent = (args: any, propsUnit: any) => {
                           onItemSelect={arenaFilterItemSelected}
                         />
                       </FormGroup>
-                      <FormGroup style={{ width: "200px" }} label={"Tenor"}>
+                      <FormGroup style={{ width: "200px" }} label={"Order"}>
                         <Select
                           key="select"
                           itemRenderer={renderFilm}
@@ -263,7 +271,7 @@ const AllOrdersComponent = (args: any, propsUnit: any) => {
                       </FormGroup>
                       <FormGroup
                         style={{ width: "200px", marginLeft: "30px" }}
-                        label={"Tenor"}
+                        label={"Price"}
                       >
                         <div className="bp3-customise-numeric">
                           <NumericInput
@@ -284,11 +292,13 @@ const AllOrdersComponent = (args: any, propsUnit: any) => {
                               value="mot"
                               className="choose_answer"
                               label="Bid"
+                              style={{ color: "#3389DB", fontSize: "12px" }}
                             />
                             <Radio
                               value="hai"
                               className="choose_answer"
                               label="Offer"
+                              style={{ color: "#3389DB", fontSize: "12px" }}
                             />
                           </RadioGroup>
                         </div>
@@ -321,7 +331,7 @@ const AllOrdersComponent = (args: any, propsUnit: any) => {
               </div>
             </h1>
             <div style={{ display: "flex", marginLeft: "620px" }}>
-              <div style={{ width: "170px", marginRight: "14px" }}>
+              <div style={{ width: "170px", marginRight: "12px" }}>
                 <Select
                   key="select"
                   itemRenderer={renderFilm}
@@ -361,40 +371,19 @@ const AllOrdersComponent = (args: any, propsUnit: any) => {
           </div>
         </Col>
         <Col md={6}>
-          <Table
-            dataSource={data}
-            columns={columns}
-            pagination={{
-              defaultCurrent: 1,
-              total: 100,
-              pageSize: 4,
-              showSizeChanger: false,
-              itemRender: renderItem,
-            }}
-            expandable={{
-              expandedRowRender: (record: any) => (
-                <p style={{ margin: 0 }}>{record.description}</p>
-              ),
-              expandIcon: ({
-                expanded,
-                onExpand,
-                record,
-              }: {
-                expanded: any;
-                onExpand: any;
-                record: any;
-              }) =>
-                expanded ? (
-                  <a onClick={(e) => onExpand(record, e)}>
-                    <Icon icon="chevron-up" />
-                  </a>
-                ) : (
-                  <a onClick={(e) => onExpand(record, e)}>
-                    <Icon icon="chevron-down" />
-                  </a>
-                ),
-            }}
-          />
+          <Card elevation={3}>
+            <Table
+              dataSource={data}
+              columns={columns}
+              pagination={{
+                defaultCurrent: 1,
+                total: 100,
+                pageSize: 4,
+                showSizeChanger: false,
+                itemRender: renderItem,
+              }}
+            />
+          </Card>
         </Col>
       </Row>
     </Container>
