@@ -1,5 +1,6 @@
 @import "rtc-design-prototype/src/assets/scss/core.scss";
 .App {
+  background: #f5f5f5;
   .header {
     .bp3-navbar {
       &.dark_version {
@@ -10,6 +11,9 @@
   .content {
     margin: 0 100px;
   }
+}
+body {
+  background: #f5f5f5;
 }
 .mt-20 {
   margin-top: 20px;
@@ -25,19 +29,28 @@
 }
 .icon-ml {
   svg {
-    width: 35px;
-    height: 35px;
+    width: 24px;
+    height: 24px;
   }
   margin-left: 35px;
 }
 .bp3-dialog .bp3-dialog-body .bp3-input-group {
   margin: 0;
 }
-.bp3-control-group.bp3-numeric-input .bp3-input-group .bp3-input {
+.bp3-customise-numeric
+  .bp3-control-group.bp3-numeric-input
+  .bp3-input-group
+  .bp3-input {
   border: none;
+  &:focus {
+    border: none;
+  }
 }
 .bp3-icon.bp3-intent-primary {
   color: #002c5f;
+}
+.btn-bd {
+  border: 1px solid #002c5f;
 }
 .bp3-form-group .bp3-label {
   font-size: 12px;
@@ -46,4 +59,19 @@
 .bp3-dialog .bp3-dialog-header .bp3-heading {
   color: black;
   font-size: 30px;
+}
+.bp3-dialog {
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+}
+.bp3-dialog .bp3-dialog-body .bp3-input-group .bp3-input {
+  border: 0.7px solid #e0e0e0;
+}
+.bp3-dialog .bp3-dialog-body .bp3-input-group .bp3-input:focus {
+  border: 0.7px solid #002c5f;
+}
+.mb-15 {
+  margin-bottom: 15px;
+}
+.bp3-elevation-3 {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }

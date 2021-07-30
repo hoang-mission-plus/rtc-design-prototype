@@ -359,7 +359,7 @@ const AllOrdersComponent = (args: any, propsUnit: any) => {
                 <Button
                   intent="none"
                   text="Apply"
-                  className="btn-ml-15 btn-mb btn-bd"
+                  className="btn-ml-15 btn-mb btn-bd mb-15"
                 />
                 <Icon
                   icon="download"
